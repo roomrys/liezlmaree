@@ -1,0 +1,97 @@
+:root {
+    --ff-sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif;
+    --top-bar-hieght: 50px;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(37, 37, 37);
+}
+
+.header {
+    display: block;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left:0;
+    min-width: auto;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+    height: var(--top-bar-hieght);
+    z-index: 5050;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.top-bar-icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar-icons-hamburger-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.bar {
+    width: 18px;
+    height: 2px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+  }
+
+.top-bar-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar-link-single {
+    padding: 0 10px;
+    color: black;
+    font-family: var(--ff-sans);
+    border-radius: 1000px;
+}
+
+.top-bar-link-single:hover{
+    background-color: rgb(138, 138, 138);
+}
+
+.top-bar-icons-hamburger:hover > * {
+    background-color: rgb(138, 138, 138);
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    top: var(--top-bar-hieght);
+    left: 0px;
+    margin: 0;
+}
+
+html {
+    background: url(./assets/pfo.png);
+    background-size: cover;
+    --webkit-background-size: cover;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.ps-relative {
+    position: relative !important;
+}
+
+.jc-center {
+    justify-content: center !important;
+}
+
+.ai-center {
+    align-items: center !important;
+}
