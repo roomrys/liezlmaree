@@ -1,6 +1,7 @@
 :root {
     --ff-sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif;
     --top-bar-hieght: 50px;
+    --title-height: 60px;
 }
 
 body {
@@ -32,18 +33,24 @@ body {
     justify-content: space-between;
 }
 
-.top-bar-icons-hamburger-container {
+#logo {
+    height: 30px;
+}
+
+.vc-flexbox {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 .bar {
+    display: none;
     width: 18px;
     height: 2px;
     background-color: #333;
     margin: 4px 0;
     transition: 0.4s;
+
   }
 
 .top-bar-links {
@@ -74,10 +81,28 @@ body {
     margin: 0;
 }
 
-html {
+.parallax {
     background: url(./assets/pfo.png);
     background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
     --webkit-background-size: cover;
+    min-height: calc(100vh - var(--title-height) - var(--top-bar-hieght));
+}
+
+.title {
+    padding-left: 30px;
+    height: var(--title-height);
+    color:blanchedalmond;
+    font-family: var(--ff-sans);
+}
+
+.description {
+    padding: 20px;
+    color:azure;
+    font-family: var(--ff-sans);
+    background-color: rgb(29, 29, 29);
 }
 
 a:link {
