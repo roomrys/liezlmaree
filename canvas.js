@@ -21,11 +21,11 @@ addEventListener('resize', () => {
 })
 addEventListener('mousemove', (event) => {
     if ((event.clientX > canvas.width * 0.9) || (event.clientY > canvas.height * 0.9)) {
-        mouse.x = canvas.width / 2
-        mouse.y = canvas.height / 2
+        mouse.x = getCanvasDim().xDim / 2
+        mouse.y = getCanvasDim().yDim / 2
     } else {
         mouse.x = event.clientX
-        mouse.y = event.clientY
+        mouse.y = event.clientY - tb.clientHeight
     }
 })
 
@@ -60,7 +60,7 @@ class ParticleBundle {
         this.color = color
 
         this.bundleRadius = 0
-        this.velocity = 0.1
+        this.velocity = 0.01
         this.numParticles = numParticles
         this.radPerParticle = 2 * Math.PI / this.numParticles 
         this.bundle = this.addParticles()
@@ -131,18 +131,17 @@ class BundlesOnScreen {
     update() {
         let i = 0
         this.bundles.forEach(bundle => {
-            if (bundle.bundleRadius > Math.max(canvas.width, canvas.height)) {
-                this.bundles.splice(i, 1)
-            } else{
-                bundle.update()
-            }
+            // if (bundle.bundleRadius > Math.max(canvas.width, canvas.height)) {
+            //     this.bundles.splice(i, 1)
+            // } else{
+            bundle.update()
+            // }
             i++
         })
-        this.numBundles
         if (this.numBundles > 100) {
             this.bundles.splice(0, 1)
         }
-        console.log(this.numBundles)
+        // console.log(this.numBundles)
     }
 
 }
