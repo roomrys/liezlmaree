@@ -31,7 +31,7 @@ addEventListener('mousemove', (event) => {
         // mouse.y = randomDoodles()
     } else {
         mouse.x = event.clientX
-        mouse.y = event.clientY - tb.clientHeight
+        mouse.y = event.clientY
     }
 })
 canvas.addEventListener('mouseleave', (event) => {
@@ -41,21 +41,40 @@ canvas.addEventListener('mouseenter', (event) => {
     botTakeover = false
 })
 
-function randomDoodles(x=mouse.x, y=mouse.y) {
-    xx = x
-    yy = y
-    do {
-        xx = x + 30*(Math.random() - 0.5)
-        yy = y + 30*(Math.random() - 0.5)
-    } while(isOutOfBounds(xx, yy))
-    return [xx, yy]
-}
-
-function isOutOfBounds(x, y, lowerX=0, lowerY=0, higherX=0.99*getCanvasDim().xDim, higherY=0.99*getCanvasDim().yDim) {
-    if ((x <= lowerX) || (y <=lowerY) || (x >= higherX) || (y >= higherY)) {
-        return true
-    } else {
-        return false
+const spiral = {
+    center: {
+        x: getCanvasDim().xDim / 2,
+        y: getCanvasDim().yDim / 2
+    },
+    current: {
+        radius: 135,
+        angle: 0,
+        x: 0,
+        y: 0,
+        direction: 1
+    },
+    reset: function() {
+        this.center.x = getCanvasDim().xDim / 2,
+        this.center.y = getCanvasDim().yDim / 2,
+        this.current.radius = 135,
+        this.current.angle = 0,
+        this.current.x = this.center.x,
+        this.current.y = this.center.y
+        this.current.direction = this.current.direction * -1 
+    },
+    doodle: function() {
+        console.log(this.current.radius)
+        this.current.radius += 0.1
+        this.current.angle =this.current.angle + this.current.direction * (2 * Math.PI) / 360
+        xx = this.center.x + this.current.radius * Math.cos(this.current.angle)
+        yy = this.center.y + this.current.radius * Math.sin(this.current.angle)
+        if (isOutOfBounds(xx, yy)) {
+            this.reset()
+            this.doodle()
+        }
+        else {
+            return [xx, yy]
+        }
     }
 }
 
@@ -180,12 +199,33 @@ function getCanvasDim() {
     return { xDim, yDim }
 }
 
+function randomDoodles(x=mouse.x, y=mouse.y) {
+    xx = x
+    yy = y
+    radius = 8
+    do {
+        angle = Math.random() * 2 * Math.PI
+        xx = x + radius * Math.cos(angle)
+        yy = y + radius * Math.sin(angle)
+    } while(isOutOfBounds(xx, yy))
+    return [xx, yy]
+}
+
+function isOutOfBounds(x, y, lowerX=0, lowerY=0, higherX=0.99*getCanvasDim().xDim, higherY=0.99*getCanvasDim().yDim) {
+    if ((x <= lowerX) || (y <=lowerY) || (x >= higherX) || (y >= higherY)) {
+        return true
+    } else {
+        return false
+    }
+}
+
 function animate() {
     requestAnimationFrame(animate)
     if (botTakeover) {
-        [mouse.x, mouse.y] = randomDoodles()
+        [mouse.x, mouse.y] = spiral.doodle()
     }
-    c.fillStyle = 'rgba(0, 0, 0, 0.01)'
+    console.log(bos.delay / 10000)
+    c.fillStyle = `rgba(0, 0, 0, ${bos.delay / 10000})`
     c.fillRect(0, 0, canvas.width, canvas.height)
 
     bos.update()
