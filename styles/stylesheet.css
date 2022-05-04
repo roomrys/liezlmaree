@@ -86,9 +86,8 @@ body {
 
 .container {
     position: relative;
-    width: 100%;
     top: var(--top-bar-hieght);
-    left: 0px;
+    width: 100%;
     margin: 0;
 }
 
