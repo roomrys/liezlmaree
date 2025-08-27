@@ -1,3 +1,23 @@
-document.write(
-  "<div class='top-bar'><div class='top-bar-icons'><div class='vc-flexbox'><a href='index.html#' class='top-bar-icons-hamburger jc-center ai-center'><div class='bar'></div><div class='bar'></div><div class='bar'></div></a></div><div class='vc-flexbox'><a href='#' class='top-bar-icons-logo'><img class='logo' src='assets/liezlmaree.png' alt='liezlmaree'></a></div></div><div class='top-bar-links ai-center'><a class='top-bar-link-single active' href='index.html'>Home</a><a class='top-bar-link-single' href='#articles'>Articles</a><a class='top-bar-link-single' href='index.html#about'>About</a><a class='top-bar-link-single' href='index.html#contact'>Contact</a></div></div>"
-);
+function loadTopBar(topbarPath = "topbar.html") {
+  const topBarElement = document.querySelector("top-bar");
+
+  if (topBarElement) {
+    fetch(topbarPath)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.text();
+      })
+      .then((html) => {
+        topBarElement.innerHTML = html;
+      })
+      .catch((error) => {
+        console.error("Error loading topbar:", error);
+      });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  loadTopBar();
+});
