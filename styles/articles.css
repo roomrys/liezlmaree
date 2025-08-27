@@ -260,6 +260,7 @@ body {
 .bio-links {
     display: flex;
     gap: 1rem;
+    justify-content: left;
 }
 
 .bio-links a {
@@ -308,11 +309,15 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .blog-article {
-        padding: 1rem;
-        margin: 1rem;
+@media (max-width: 870px) {
+
+    .blog-article{
+        border-radius: 0;
     }
+
+}
+
+@media (max-width: 768px) {
     
     .article-title {
         font-size: 2rem;
@@ -326,6 +331,11 @@ body {
     .author-bio {
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+
+    .bio-links {
+        justify-content: center;
     }
     
     .article-nav {
