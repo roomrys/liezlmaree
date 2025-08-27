@@ -8,8 +8,192 @@ function loadBlogPosts() {
   // Check if we're on an article page
   const articleHeader = document.querySelector(".article-header");
   if (articleHeader) {
+    // Keep container hidden initially
+    showLoadingSpinner();
     populateArticleHeader(articleHeader);
   }
+}
+
+function showLoadingSpinner() {
+  const container = document.querySelector(".container");
+  const spinner = document.querySelector(".css-spinner");
+
+  if (container) {
+    container.classList.remove("content-loaded");
+  }
+  if (spinner) {
+    spinner.classList.remove("hidden");
+  }
+}
+
+function hideLoadingSpinner() {
+  const container = document.querySelector(".container");
+  const spinner = document.querySelector(".css-spinner");
+
+  // Add a small delay to ensure content is fully rendered
+  setTimeout(() => {
+    if (container) {
+      container.classList.add("content-loaded");
+    }
+    if (spinner) {
+      spinner.classList.add("hidden");
+    }
+  }, 200);
+}
+
+function populateAuthorBio(author) {
+  const authorBioSection = document.querySelector(".author-bio");
+
+  if (!authorBioSection || !author) {
+    return;
+  }
+
+  // Update bio avatar
+  const bioAvatar = authorBioSection.querySelector(".bio-avatar");
+  if (bioAvatar) {
+    bioAvatar.src = `../${author.avatar}`;
+    bioAvatar.alt = author.name;
+  }
+
+  // Update bio name
+  const bioName = authorBioSection.querySelector(".bio-content h3");
+  if (bioName) {
+    bioName.textContent = `About ${author.name}`;
+  }
+
+  // Update bio description
+  const bioDescription = authorBioSection.querySelector(".bio-content p");
+  if (bioDescription) {
+    bioDescription.textContent = author.bio;
+  }
+
+  // Update bio links
+  const bioLinks = authorBioSection.querySelector(".bio-links");
+  if (bioLinks && author.links) {
+    bioLinks.innerHTML = "";
+
+    // Add each social link
+    if (author.links.email) {
+      const emailLink = document.createElement("a");
+      emailLink.href = `mailto:${author.links.email}`;
+      emailLink.textContent = "Email";
+      bioLinks.appendChild(emailLink);
+    }
+
+    if (author.links.linkedin) {
+      const linkedinLink = document.createElement("a");
+      linkedinLink.href = author.links.linkedin;
+      linkedinLink.textContent = "LinkedIn";
+      linkedinLink.target = "_blank";
+      bioLinks.appendChild(linkedinLink);
+    }
+
+    if (author.links.github) {
+      const githubLink = document.createElement("a");
+      githubLink.href = author.links.github;
+      githubLink.textContent = "GitHub";
+      githubLink.target = "_blank";
+      bioLinks.appendChild(githubLink);
+    }
+
+    if (author.links.website) {
+      const websiteLink = document.createElement("a");
+      websiteLink.href = author.links.website;
+      websiteLink.textContent = "Website";
+      websiteLink.target = "_blank";
+      bioLinks.appendChild(websiteLink);
+    }
+  }
+}
+
+function populateArticleHeader(headerElement) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const articleId = urlParams.get("id") || getArticleIdFromPath();
+
+  if (!articleId) {
+    console.warn("No article ID found");
+    hideLoadingSpinner();
+    return;
+  }
+
+  fetch("../data/blog-posts.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const post = data.posts.find((p) => p.id === articleId);
+
+      if (post) {
+        const author = data.authors ? data.authors[post.authorId] : null;
+
+        // Update all the header elements
+        updateHeaderElements(headerElement, post, author);
+
+        // Load the article content
+        loadArticleContent(post).then(() => {
+          // Hide loading spinner after content is loaded
+          hideLoadingSpinner();
+        });
+
+        // Populate author bio
+        if (typeof populateAuthorBio === "function") {
+          populateAuthorBio(author);
+        }
+      } else {
+        console.error("Post not found:", articleId);
+        hideLoadingSpinner();
+      }
+    })
+    .catch((error) => {
+      console.error("Error loading article data:", error);
+      hideLoadingSpinner();
+    });
+}
+
+function loadArticleContent(post) {
+  return new Promise((resolve, reject) => {
+    const articleBody = document.querySelector(".article-content");
+
+    if (!post.id) {
+      console.warn("No content file specified");
+      resolve();
+      return;
+    }
+
+    fetch(`../content/${post.id}.md`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Failed to load content: ${response.status}`);
+        }
+        return response.text();
+      })
+      .then((markdownContent) => {
+        // Convert markdown to HTML
+        const htmlContent = marked.parse(markdownContent);
+
+        // Add the HTML to the page
+        const summaryDiv = articleBody.querySelector(".article-summary");
+        if (summaryDiv) {
+          summaryDiv.insertAdjacentHTML("afterend", htmlContent);
+        } else {
+          articleBody.innerHTML += htmlContent;
+        }
+
+        // Post-process images to add captions
+        addImageCaptions(articleBody);
+
+        // Re-run syntax highlighting
+        if (typeof hljs !== "undefined") {
+          hljs.highlightAll();
+        }
+
+        resolve();
+      })
+      .catch((error) => {
+        console.error("Error loading article content:", error);
+        articleBody.innerHTML +=
+          "<p>Sorry, article content could not be loaded.</p>";
+        reject(error);
+      });
+  });
 }
 
 function populateArticlesList(postsContainer) {
@@ -46,38 +230,6 @@ function populateArticlesList(postsContainer) {
     })
     .catch((error) => {
       console.error("Error loading blog posts:", error);
-    });
-}
-
-function populateArticleHeader(headerElement) {
-  const urlParams = new URLSearchParams(window.location.search);
-  const articleId = urlParams.get("id");
-
-  if (!articleId) {
-    console.warn("No article ID found");
-    return;
-  }
-
-  fetch("../data/blog-posts.json")
-    .then((response) => response.json())
-    .then((data) => {
-      const post = data.posts.find((p) => p.id === articleId);
-
-      if (post) {
-        const author = data.authors[post.authorId];
-
-        // Update all the header elements (same as before)
-        updateHeaderElements(headerElement, post, author);
-
-        // Load the article content
-        loadArticleContent(post);
-
-        // Populate author bio
-        populateAuthorBio(author);
-      }
-    })
-    .catch((error) => {
-      console.error("Error loading article data:", error);
     });
 }
 
@@ -159,38 +311,6 @@ function updateHeaderElements(headerElement, post, author) {
   }
 }
 
-function loadArticleContent(post) {
-  const articleBody = document.querySelector(".article-content");
-
-  fetch(`../content/${post.id}.md`)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`Failed to load content: ${response.status}`);
-      }
-      return response.text();
-    })
-    .then((markdownContent) => {
-      // Use marked.js without custom renderer first
-      const htmlContent = marked.parse(markdownContent);
-
-      // Add the HTML to the page
-      articleBody.innerHTML += htmlContent;
-
-      // Post-process images to add captions
-      addImageCaptions(articleBody);
-
-      // Re-run syntax highlighting
-      if (typeof hljs !== "undefined") {
-        hljs.highlightAll();
-      }
-    })
-    .catch((error) => {
-      console.error("Error loading article content:", error);
-      articleBody.innerHTML =
-        "<p>Sorry, article content could not be loaded.</p>";
-    });
-}
-
 function addImageCaptions(container) {
   const images = container.querySelectorAll("img");
 
@@ -218,71 +338,6 @@ function addImageCaptions(container) {
       img.removeAttribute("title");
     }
   });
-}
-
-function populateAuthorBio(author) {
-  const authorBioSection = document.querySelector(".author-bio");
-
-  if (!authorBioSection || !author) {
-    return;
-  }
-
-  // Update bio avatar
-  const bioAvatar = authorBioSection.querySelector(".bio-avatar");
-  if (bioAvatar) {
-    bioAvatar.src = `../${author.avatar}`;
-    bioAvatar.alt = author.name;
-  }
-
-  // Update bio name
-  const bioName = authorBioSection.querySelector(".bio-content h3");
-  if (bioName) {
-    bioName.textContent = `About ${author.name}`;
-  }
-
-  // Update bio description
-  const bioDescription = authorBioSection.querySelector(".bio-content p");
-  if (bioDescription) {
-    bioDescription.textContent = author.bio;
-  }
-
-  // Update bio links
-  const bioLinks = authorBioSection.querySelector(".bio-links");
-  if (bioLinks && author.links) {
-    bioLinks.innerHTML = "";
-
-    // Add each social link
-    if (author.links.email) {
-      const emailLink = document.createElement("a");
-      emailLink.href = `mailto:${author.links.email}`;
-      emailLink.textContent = "Email";
-      bioLinks.appendChild(emailLink);
-    }
-
-    if (author.links.linkedin) {
-      const linkedinLink = document.createElement("a");
-      linkedinLink.href = author.links.linkedin;
-      linkedinLink.textContent = "LinkedIn";
-      linkedinLink.target = "_blank";
-      bioLinks.appendChild(linkedinLink);
-    }
-
-    if (author.links.github) {
-      const githubLink = document.createElement("a");
-      githubLink.href = author.links.github;
-      githubLink.textContent = "GitHub";
-      githubLink.target = "_blank";
-      bioLinks.appendChild(githubLink);
-    }
-
-    if (author.links.website) {
-      const websiteLink = document.createElement("a");
-      websiteLink.href = author.links.website;
-      websiteLink.textContent = "Website";
-      websiteLink.target = "_blank";
-      bioLinks.appendChild(websiteLink);
-    }
-  }
 }
 
 document.addEventListener("DOMContentLoaded", function () {
