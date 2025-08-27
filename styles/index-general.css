@@ -1,0 +1,91 @@
+@import url('variables.css');
+
+html {
+    scroll-behavior: smooth;
+}
+
+[id] {
+    scroll-margin-top: var(--top-bar-height);
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(37, 37, 37);
+}
+
+p {
+    color:rgb(191, 178, 113);
+}
+
+.logo {
+    height: 30px;
+    max-width: var(--logo-width);
+}
+
+.vc-flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.hc-flexbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pad-left {
+    padding-left: 20px;
+}
+
+.container {
+    position: relative;
+    top: var(--top-bar-height);
+    width: 100%;
+    margin: 0;
+}
+
+.title {
+    position: relative;
+    z-index: 1;  /* Ensure title is above particles */
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    height: var(--title-height);
+    color:blanchedalmond;
+    font-family: var(--ff-sans);
+    background-color: rgb(29, 29, 29);
+
+}
+
+.description {
+    position: relative;
+    z-index: 1;  /* Ensure description is above particles */
+    padding: 10vh 10vw;
+    box-sizing: border-box;
+    min-height: var(--description-height);
+    color:azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: transparent;
+}
+
+.icon {
+    max-width: 30px;
+    margin: 5px;
+}
+
+.icon:hover {
+    filter: invert(48%) sepia(13%) saturate(3207%) hue-rotate(130deg) brightness(95%) contrast(80%);
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.jc-center {
+    justify-content: center !important;
+}
+
+.ai-center {
+    align-items: center !important;
+}

@@ -1,0 +1,27 @@
+@import url('variables.css');
+
+#particles-js {
+  position: fixed;
+}
+
+#canvas-element {
+  z-index: 0;
+}
+
+#canvas-element, #particles-js {
+  width: 100vw;
+  height: var(--canvas-height);
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  pointer-events: all;
+}
+
+a {
+    pointer-events: auto;
+}
+
+body {
+    pointer-events: none;
+}

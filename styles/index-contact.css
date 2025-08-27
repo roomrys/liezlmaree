@@ -1,0 +1,14 @@
+@import url('variables.css');
+
+#contact {background-color: rgb(37, 36, 23);}
+
+#contact .title {color:rgb(175, 171, 109);}
+
+#profile-pic {
+    max-height: 100px;
+    border-radius: 50%;
+}
+
+#contact-info {
+    max-width: var(--logo-width);
+}

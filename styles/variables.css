@@ -1,0 +1,8 @@
+:root {
+    --ff-sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif;
+    --top-bar-height: 8vh;
+    --title-height: 10vh;
+    --canvas-height: calc(100vh - var(--top-bar-height));
+    --description-height: calc(100vh - var(--title-height) - var(--top-bar-height));
+    --logo-width: 200px;
+}
