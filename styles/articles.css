@@ -1,3 +1,5 @@
+@import url('particles.css');
+
 html {background-color: rgb(38 58 65);}
 
 body {
@@ -6,6 +8,8 @@ body {
 
 /* Blog Post Styles */
 .blog-article {
+    position: relative;
+    z-index: 1; /* Ensure article is above particles */
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
