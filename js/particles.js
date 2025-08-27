@@ -1566,7 +1566,7 @@ window.particlesJS.load = function (tag_id, path_config_json, callback) {
 particlesJS("particles-js", {
   particles: {
     number: {
-      value: 200,
+      value: 125,
       density: {
         enable: true,
         value_area: 800,
@@ -1591,7 +1591,7 @@ particlesJS("particles-js", {
       },
     },
     opacity: {
-      value: 0.5,
+      value: 0.3,
       random: false,
       anim: {
         enable: false,
