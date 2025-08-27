@@ -7,6 +7,10 @@
     --logo-width: 200px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0px;
     background-color: rgb(37, 37, 37);
