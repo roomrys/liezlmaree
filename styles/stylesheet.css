@@ -130,13 +130,17 @@ lowlight {
     color: rgb(170, 170, 170);
 }
 
-#about, #contact {
+#articles, #about, #contact {
     scroll-margin-top: var(--top-bar-height);
 }
+
+#articles {background-color: #222b32;}
 
 #about {background-color: rgb(67, 60, 67);}
 
 #contact {background-color: rgb(37, 36, 23);}
+
+#articles .title {color:#89adc9;}
 
 #about .title {color:rgb(181, 162, 181);}
 
