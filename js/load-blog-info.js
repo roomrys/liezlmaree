@@ -170,18 +170,54 @@ function loadArticleContent(post) {
       return response.text();
     })
     .then((markdownContent) => {
-      // Convert markdown to HTML using marked.js
+      // Use marked.js without custom renderer first
       const htmlContent = marked.parse(markdownContent);
+
+      // Add the HTML to the page
       articleBody.innerHTML += htmlContent;
 
-      // Re-run syntax highlighting on the new content
-      hljs.highlightAll();
+      // Post-process images to add captions
+      addImageCaptions(articleBody);
+
+      // Re-run syntax highlighting
+      if (typeof hljs !== "undefined") {
+        hljs.highlightAll();
+      }
     })
     .catch((error) => {
       console.error("Error loading article content:", error);
       articleBody.innerHTML =
         "<p>Sorry, article content could not be loaded.</p>";
     });
+}
+
+function addImageCaptions(container) {
+  const images = container.querySelectorAll("img");
+
+  images.forEach((img) => {
+    const title = img.getAttribute("title");
+    if (title) {
+      // Create figure wrapper
+      const figure = document.createElement("figure");
+      figure.className = "image-figure";
+
+      // Move image into figure
+      img.parentNode.insertBefore(figure, img);
+      figure.appendChild(img);
+
+      // Add caption
+      const caption = document.createElement("figcaption");
+      caption.className = "image-caption";
+      caption.textContent = title;
+      figure.appendChild(caption);
+
+      // Add class to image
+      img.classList.add("article-content-image");
+
+      // Remove title attribute to avoid tooltip
+      img.removeAttribute("title");
+    }
+  });
 }
 
 function populateAuthorBio(author) {
@@ -250,8 +286,5 @@ function populateAuthorBio(author) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  loadBlogPosts().then(() => {
-    // Ensure syntax highlighting is applied after content is loaded
-    hljs.highlightAll();
-  });
+  loadBlogPosts();
 });

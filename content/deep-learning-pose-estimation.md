@@ -71,3 +71,5 @@ As we look toward the future, several exciting developments are on the horizon:
 Pose estimation continues to be a rapidly evolving field with immense practical applications. By understanding both the theoretical foundations and practical implementation details, we can build more robust and efficient systems.
 
 I hope this guide has provided you with a solid foundation for your own pose estimation projects. Feel free to reach out if you have questions or want to discuss these concepts further.
+
+![Camera projection model](../assets/present.svg "3D to 2D projection visualization")
