@@ -1,20 +1,21 @@
 @import url('variables.css');
 
+/* Oversize particles to generate particles off-screen */
 #particles-js {
   position: fixed;
+  width: 110vw;
+  height: 110vh;
+  top: -5vh;
+  left: -5vw;
 }
 
 #canvas-element {
   z-index: 0;
+  height: var(--canvas-height);
+  width: 100vw;
 }
 
 #canvas-element, #particles-js {
-  width: 100vw;
-  height: var(--canvas-height);
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
   pointer-events: all;
 }
 
