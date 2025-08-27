@@ -1,13 +1,19 @@
 :root {
     --ff-sans: -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif;
-    --top-bar-hieght: 50px;
-    --title-height: 60px;
+    --top-bar-height: 8vh;
+    --title-height: 10vh;
+    --canvas-height: calc(100vh - var(--top-bar-height));
+    --description-height: calc(100vh - var(--title-height) - var(--top-bar-height));
     --logo-width: 200px;
 }
 
 body {
     margin: 0px;
     background-color: rgb(37, 37, 37);
+}
+
+p {
+    color:rgb(191, 178, 113);
 }
 
 .header {
@@ -21,7 +27,7 @@ body {
     min-width: auto;
     width: 100%;
     background-color: rgb(95, 95, 95);
-    height: var(--top-bar-hieght);
+    height: var(--top-bar-height);
     z-index: 5050;
     box-sizing: border-box;
     display: flex;
@@ -47,7 +53,7 @@ body {
 
 .hc-flexbox {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .pad-left {
@@ -86,7 +92,7 @@ body {
 
 .container {
     position: relative;
-    top: var(--top-bar-hieght);
+    top: var(--top-bar-height);
     width: 100%;
     margin: 0;
 }
@@ -98,10 +104,12 @@ body {
     background-position: top;
     background-repeat: no-repeat;
     --webkit-background-size: cover;
-    min-height: calc(100vh - var(--title-height) - var(--top-bar-hieght));
+    min-height: calc(100vh - var(--title-height) - var(--top-bar-height));
 }
 
 .title {
+    display: flex;
+    align-items: center;
     padding-left: 30px;
     height: var(--title-height);
     color:blanchedalmond;
@@ -109,10 +117,21 @@ body {
 }
 
 .description {
-    padding: 20px;
+    padding: 8em;
+    box-sizing: border-box;
+    height: var(--description-height);
     color:azure;
-    font-family: var(--ff-sans);
+    /* font-family: var(--ff-sans); */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: rgb(29, 29, 29);
+}
+
+lowlight {
+    color: rgb(99, 99, 99);
+}
+
+#about, #contact {
+    scroll-margin-top: var(--top-bar-height);
 }
 
 .icon {
@@ -144,7 +163,7 @@ body {
     position: absolute;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    top: 50%;
+    top: 80vh;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -153,7 +172,7 @@ body {
     fill: #fff;
     -webkit-animation: pulse 1.3s infinite;
     animation: pulse 1.3s infinite
-}
+} 
 
 .down .icon:active,
 .down .icon:hover,
@@ -165,7 +184,7 @@ body {
 #particles-js {
   /* position: absolute; */
   width: 100vw;
-  height: 100vh;
+  height: var(--canvas-height);
   background: linear-gradient(to right, rgb(200, 95, 95), rgb(120, 120, 120));
   /* background-color: #e93600; */
   background-image: url("");
@@ -207,4 +226,8 @@ a:link {
 
 .ai-center {
     align-items: center !important;
+}
+
+.ai-left {
+    align-items: left !important;
 }
