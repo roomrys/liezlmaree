@@ -26,6 +26,7 @@ body {
     margin-top: 2rem;
     margin-bottom: 2rem;
     background-color: rgb(40 84 100);
+    pointer-events: auto; /* Pointer events disabled in particles.css */
 }
 
 /* Article Header */
@@ -157,13 +158,12 @@ body {
 }
 
 /* Code Blocks */
-.code-block {
+code {
     padding: 1.5rem;
     margin: 2rem 0;
-    pointer-events: auto; /* Pointer events disabled in particles.css */
 }
 
-.code-block pre {
+pre {
     margin: 0;
     font-size: 0.9rem;
     line-height: 1.4;

@@ -1,0 +1,42 @@
+{
+  "authors": {
+    "liezl-maree": {
+      "name": "Liezl Maree",
+      "bio": "Engineer focused on computer vision and reinforcement learning. Previously worked on pose estimation software development with applications in neuroscience.",
+      "avatar": "assets/profile-picture.jpg",
+      "links": {
+        "email": "liezlmaree8@gmail.com",
+        "linkedin": "https://www.linkedin.com/in/liezl-maree/",
+        "github": "https://github.com/roomrys",
+        "twitter": null,
+        "website": "https://roomrys.github.io/liezlmaree"
+      }
+    }
+  },
+  "posts": [
+    {
+      "id": "deep-learning-pose-estimation",
+      "title": "Deep Learning for Pose Estimation: A Practical Guide",
+      "date": "December 15, 2024",
+      "readTime": "12 min read",
+      "summary": "An in-depth exploration of modern pose estimation techniques, their mathematical foundations, and practical applications in robotics and computer vision. Learn how to implement state-of-the-art models and optimize them for real-world scenarios.",
+      "image": "assets/lm-magenta.png",
+      "tags": ["Computer Vision", "Deep Learning", "Python"],
+      "published": true,
+      "templateFile": "article_template.html",
+      "authorId": "liezl-maree"
+    },
+    {
+      "id": "reinforcement-learning-basics",
+      "title": "Reinforcement Learning: From Theory to Practice",
+      "date": "November 28, 2024",
+      "readTime": "8 min read",
+      "summary": "Understanding the fundamental concepts of reinforcement learning and how to apply them to real-world problems in robotics and control systems.",
+      "image": "assets/present.svg",
+      "tags": ["Reinforcement Learning", "Control Theory"],
+      "published": false,
+      "templateFile": "rl-article.html",
+      "authorId": "liezl-maree"
+    }
+  ]
+}

@@ -11,8 +11,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark.min.css">
     <link rel="icon" href="../assets/lm.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
     <script src="../js/favicon-theme.js"></script>
+    <script src="../js/load-blog-info.js"></script>
     <script defer src="../js/particles.js"></script>
 </head>
 
@@ -26,122 +27,44 @@
             <header class="article-header">
                 <div class="breadcrumb">
                     <a href="../index.html">Home</a> >
-                    <a href="../index.html#articles">Articles</a> >
-                    <span>Deep Learning for Pose Estimation</span>
+                    <a href="../index.html#articles">Articles</a>
+                    <!-- Title dynamically generated. -->
                 </div>
 
-                <h1 class="article-title">Deep Learning for Pose Estimation: A Practical Guide</h1>
+                <h1 class="article-title">
+                    <!-- Title dynamically generated. -->
+                </h1>
 
                 <div class="article-meta">
                     <div class="author-info">
-                        <img src="../assets/profile-picture.jpg" alt="Liezl Maree" class="author-avatar">
+                        <img src="" alt="" class="author-avatar"> <!-- Empty initially -->
                         <div>
-                            <p class="author-name">Liezl Maree</p>
-                            <p class="post-date">December 15, 2024 • 12 min read</p>
+                            <p class="author-name"><!-- Dynamically populated --></p>
+                            <p class="post-date">
+                                <!-- Date and read time dynamically generated. -->
+                            </p>
                         </div>
                     </div>
 
                     <div class="article-tags">
-                        <span class="tag">Computer Vision</span>
-                        <span class="tag">Deep Learning</span>
-                        <span class="tag">Python</span>
+                        <!-- Tags dynamically generated. -->
                     </div>
                 </div>
 
                 <div class="article-image">
-                    <img src="../assets/lm-magenta.png" alt="Article hero image">
+                    <!-- Placeholder image, dynamically updated. -->
+                    <img src="../assets/liezlmaree.png" alt="hero image">
                 </div>
             </header>
 
             <!-- Article Content -->
-            <div class="article-content">
+            <div id="article-content" class="article-content">
                 <div class="article-summary">
-                    <p>An in-depth exploration of modern pose estimation techniques, their mathematical foundations, and
-                        practical applications in robotics and computer vision. Learn how to implement state-of-the-art
-                        models and optimize them for real-world scenarios.</p>
+                    <p>
+                        <!-- Dynamically populated summary. -->
+                    </p>
                 </div>
-
-                <h2>Introduction</h2>
-                <p>Pose estimation has become one of the most exciting areas in computer vision, with applications
-                    ranging from augmented reality to robotics. In this comprehensive guide, we'll explore the
-                    mathematical foundations and practical implementation of modern pose estimation systems.</p>
-
-                <h2>The Mathematics Behind Pose Estimation</h2>
-                <p>At its core, pose estimation involves understanding the geometric relationship between 3D objects and
-                    their 2D projections. The fundamental equation we work with is the camera projection model:</p>
-
-                <div class="code-block">
-                    <pre><code>import numpy as np
-import cv2
-
-def project_points(points_3d, camera_matrix, dist_coeffs, rvec, tvec):
-    """
-    Project 3D points to 2D image coordinates
-    """
-    points_2d, _ = cv2.projectPoints(
-        points_3d, rvec, tvec, camera_matrix, dist_coeffs
-    )
-    return points_2d.reshape(-1, 2)</code></pre>
-                </div>
-
-                <h2>Modern Approaches</h2>
-                <p>Recent advances in deep learning have revolutionized pose estimation. Networks like PoseNet and
-                    MediaPipe have made real-time pose estimation accessible to a broader audience.</p>
-
-                <h3>Key Challenges</h3>
-                <ul>
-                    <li><strong>Occlusion handling:</strong> When parts of the subject are hidden</li>
-                    <li><strong>Scale variation:</strong> Objects at different distances</li>
-                    <li><strong>Real-time performance:</strong> Balancing accuracy with speed</li>
-                </ul>
-
-                <h2>Practical Implementation</h2>
-                <p>Let's dive into a practical example using Python and OpenCV:</p>
-
-                <div class="code-block">
-                    <pre><code>class PoseEstimator:
-    def __init__(self, model_path):
-        self.model = self.load_model(model_path)
-        self.camera_matrix = None
-        self.dist_coeffs = None
-    
-    def estimate_pose(self, image):
-        # Preprocess image
-        preprocessed = self.preprocess(image)
-        
-        # Run inference
-        keypoints = self.model.predict(preprocessed)
-        
-        # Post-process results
-        return self.postprocess(keypoints)</code></pre>
-                </div>
-
-                <h2>Applications in Robotics</h2>
-                <p>In my research lab, we've applied these techniques to robotic manipulation tasks. The ability to
-                    accurately estimate the pose of objects in real-time has enabled more sophisticated robot behaviors.
-                </p>
-
-                <blockquote class="article-quote">
-                    "The intersection of mathematics and engineering creates possibilities that neither field could
-                    achieve alone."
-                </blockquote>
-
-                <h2>Future Directions</h2>
-                <p>As we look toward the future, several exciting developments are on the horizon:</p>
-
-                <ol>
-                    <li>Integration with transformer architectures</li>
-                    <li>Improved handling of dynamic scenes</li>
-                    <li>Better generalization across different domains</li>
-                </ol>
-
-                <h2>Conclusion</h2>
-                <p>Pose estimation continues to be a rapidly evolving field with immense practical applications. By
-                    understanding both the theoretical foundations and practical implementation details, we can build
-                    more robust and efficient systems.</p>
-
-                <p>I hope this guide has provided you with a solid foundation for your own pose estimation projects.
-                    Feel free to reach out if you have questions or want to discuss these concepts further.</p>
+                <!-- Dynamically loaded markdown content goes here. -->
             </div>
 
             <!-- Article Footer -->
@@ -156,15 +79,12 @@ def project_points(points_3d, camera_matrix, dist_coeffs, rvec, tvec):
                 </div> -->
 
                 <div class="author-bio">
-                    <img src="../assets/profile-picture.jpg" alt="Liezl Maree" class="bio-avatar">
+                    <img src="" alt="" class="bio-avatar"> <!-- Empty initially -->
                     <div class="bio-content">
-                        <h3>About Liezl Maree</h3>
-                        <p>Engineer focused on computer vision and reinforcement learning. Previously worked on pose
-                            estimation software development with applications in neuroscience.</p>
+                        <h3><!-- Dynamically populated --></h3>
+                        <p><!-- Dynamically populated --></p>
                         <div class="bio-links">
-                            <a href="mailto:liezlmaree8@gmail.com">Email</a>
-                            <a href="https://www.linkedin.com/in/liezl-maree/">LinkedIn</a>
-                            <a href="https://github.com/roomrys">GitHub</a>
+                            <!-- Dynamically populated -->
                         </div>
                     </div>
                 </div>
