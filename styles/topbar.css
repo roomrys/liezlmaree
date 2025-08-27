@@ -54,3 +54,23 @@
 .top-bar-icons-hamburger:hover > * {
     background-color: rgb(138, 138, 138);
 }
+
+/* Hide certain links on smaller screens */
+@media (max-width: 490px) {
+    .top-bar-link-single[data-hide-small] {
+        display: none;
+    }
+}
+
+@media (max-width: 345px) {
+    .top-bar-link-single[data-hide-mobile] {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Hide hamburger on desktop */
+    .top-bar-icons-hamburger {
+        display: none;
+    }
+}
