@@ -102,16 +102,6 @@ p {
     margin: 0;
 }
 
-.parallax {
-    background: url(./assets/pfo.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    --webkit-background-size: cover;
-    min-height: calc(100vh - var(--title-height) - var(--top-bar-height));
-}
-
 .title {
     position: relative;
     z-index: 1;
@@ -244,10 +234,6 @@ a {
 
 a:link {
     text-decoration: none;
-}
-
-.ps-relative {
-    position: relative !important;
 }
 
 .jc-center {
