@@ -126,6 +126,40 @@ p {
     background-color: transparent;
 }
 
+.post-date {
+    color: #818181;
+    font-size: medium;
+}
+
+.post-link {
+    color: #ffffff;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: x-large;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+.summary {
+    color: #acacac;
+    font-size: large;
+}
+
+.thumbnail {
+    flex-shrink: 0; /* Prevent shrinking */
+    width: 15vw; /* Responsive width based on viewport */
+    aspect-ratio: 1; /* Square thumbnails */
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
 lowlight {
     color: rgb(170, 170, 170);
 }
@@ -145,6 +179,12 @@ lowlight {
 #about .title {color:rgb(181, 162, 181);}
 
 #contact .title {color:rgb(175, 171, 109);}
+
+#posts {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
 .icon {
     color: #fff;
