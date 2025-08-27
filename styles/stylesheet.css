@@ -10,6 +10,7 @@
 body {
     margin: 0px;
     background-color: rgb(37, 37, 37);
+    pointer-events: none;
 }
 
 p {
@@ -108,6 +109,8 @@ p {
 }
 
 .title {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     padding-left: 30px;
@@ -117,13 +120,14 @@ p {
 }
 
 .description {
-    padding: 8em;
+    position: relative;
+    z-index: 1;
+    padding: 10vh 10vw;
     box-sizing: border-box;
     height: var(--description-height);
     color:azure;
-    /* font-family: var(--ff-sans); */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(29, 29, 29);
+    background-color: transparent;
 }
 
 lowlight {
@@ -182,7 +186,14 @@ lowlight {
 }
 
 #particles-js {
-  /* position: absolute; */
+  position: fixed;
+}
+
+#canvas-element {
+  z-index: 0;
+}
+
+#canvas-element, #particles-js {
   width: 100vw;
   height: var(--canvas-height);
   background: linear-gradient(to right, rgb(200, 95, 95), rgb(120, 120, 120));
@@ -191,6 +202,7 @@ lowlight {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  pointer-events: all;
 }
 
 #profile-pic {
@@ -212,6 +224,10 @@ lowlight {
 
 }
 
+a {
+    pointer-events: auto;
+}
+
 a:link {
     text-decoration: none;
 }
@@ -226,8 +242,4 @@ a:link {
 
 .ai-center {
     align-items: center !important;
-}
-
-.ai-left {
-    align-items: left !important;
 }
