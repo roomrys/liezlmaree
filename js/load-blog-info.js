@@ -32,7 +32,7 @@ function populateArticlesList(postsContainer) {
           </div>
           <div class="post-info pad-left">
             <p class="post-date">${post.date}</p>
-            <a class="post-link" href="${post.templateFile}">
+            <a class="post-link" href="article_template.html?id=${post.id}">
               ${post.title}
             </a>
             <p class="summary">
@@ -51,7 +51,7 @@ function populateArticlesList(postsContainer) {
 
 function populateArticleHeader(headerElement) {
   const urlParams = new URLSearchParams(window.location.search);
-  const articleId = urlParams.get("id") || getArticleIdFromPath();
+  const articleId = urlParams.get("id");
 
   if (!articleId) {
     console.warn("No article ID found");
@@ -247,18 +247,6 @@ function populateAuthorBio(author) {
       bioLinks.appendChild(websiteLink);
     }
   }
-}
-
-// Rest of your existing functions (populateAuthorBio, etc.)
-/* ...existing code... */
-function getArticleIdFromPath() {
-  // Extract article ID from filename or path
-  const path = window.location.pathname;
-  if (path.includes("article_template.html")) {
-    return "deep-learning-pose-estimation"; // Default for template
-  }
-  // Add more mappings as needed
-  return null;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
