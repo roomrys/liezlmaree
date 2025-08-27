@@ -117,6 +117,8 @@ p {
     height: var(--title-height);
     color:blanchedalmond;
     font-family: var(--ff-sans);
+    background-color: rgb(29, 29, 29);
+
 }
 
 .description {
@@ -124,19 +126,27 @@ p {
     z-index: 1;
     padding: 10vh 10vw;
     box-sizing: border-box;
-    height: var(--description-height);
+    min-height: var(--description-height);
     color:azure;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: transparent;
 }
 
 lowlight {
-    color: rgb(99, 99, 99);
+    color: rgb(170, 170, 170);
 }
 
 #about, #contact {
     scroll-margin-top: var(--top-bar-height);
 }
+
+#about {background-color: rgb(67, 60, 67);}
+
+#contact {background-color: rgb(37, 36, 23);}
+
+#about .title {color:rgb(181, 162, 181);}
+
+#contact .title {color:rgb(175, 171, 109);}
 
 .icon {
     color: #fff;
