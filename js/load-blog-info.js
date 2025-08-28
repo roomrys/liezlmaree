@@ -185,6 +185,19 @@ function loadArticleContent(post) {
           hljs.highlightAll();
         }
 
+        // Render math equations with KaTeX
+        if (typeof renderMathInElement !== "undefined") {
+          renderMathInElement(articleBody, {
+            delimiters: [
+              { left: "$$", right: "$$", display: true },
+              { left: "$", right: "$", display: false },
+              { left: "\\[", right: "\\]", display: true },
+              { left: "\\(", right: "\\)", display: false },
+            ],
+            throwOnError: false,
+          });
+        }
+
         resolve();
       })
       .catch((error) => {
