@@ -72,4 +72,4 @@ Pose estimation continues to be a rapidly evolving field with immense practical 
 
 I hope this guide has provided you with a solid foundation for your own pose estimation projects. Feel free to reach out if you have questions or want to discuss these concepts further.
 
-![Camera projection model](../assets/present.svg "3D to 2D projection visualization")
+![Camera projection model](./assets/present.svg "3D to 2D projection visualization")

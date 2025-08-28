@@ -148,4 +148,4 @@ The best part about math is that you can test objectively whether you are right 
 
 > "The intersection of mathematics and engineering creates possibilities that neither field could achieve alone."
 
-![Camera projection model](../assets/present.svg "3D to 2D projection visualization")
+![Camera projection model](./assets/present.svg "3D to 2D projection visualization")

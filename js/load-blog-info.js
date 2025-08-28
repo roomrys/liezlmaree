@@ -51,7 +51,7 @@ function populateAuthorBio(author) {
   // Update bio avatar
   const bioAvatar = authorBioSection.querySelector(".bio-avatar");
   if (bioAvatar) {
-    bioAvatar.src = `../${author.avatar}`;
+    bioAvatar.src = `./${author.avatar}`;
     bioAvatar.alt = author.name;
   }
 
@@ -116,7 +116,7 @@ function populateArticleHeader(headerElement) {
     return;
   }
 
-  fetch("../data/blog-posts.json")
+  fetch("./data/blog-posts.json")
     .then((response) => response.json())
     .then((data) => {
       const post = data.posts.find((p) => p.id === articleId);
@@ -158,7 +158,7 @@ function loadArticleContent(post) {
       return;
     }
 
-    fetch(`../content/${post.id}.md`)
+    fetch(`./content/${post.id}.md`)
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Failed to load content: ${response.status}`);
@@ -266,7 +266,7 @@ function updateHeaderElements(headerElement, post, author) {
     const authorName = headerElement.querySelector(".author-name");
 
     if (authorAvatar) {
-      authorAvatar.src = `../${author.avatar}`;
+      authorAvatar.src = `./${author.avatar}`;
       authorAvatar.alt = author.name;
     }
 
@@ -294,7 +294,7 @@ function updateHeaderElements(headerElement, post, author) {
       imageContainer.style.display = "none";
     };
 
-    imageElement.src = `../${post.image}`;
+    imageElement.src = `./${post.image}`;
     imageElement.alt = `${post.title} hero image`;
   }
 
