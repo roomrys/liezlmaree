@@ -128,7 +128,7 @@ function populateArticleHeader(headerElement) {
         updateHeaderElements(headerElement, post, author);
 
         // Load the article content
-        loadArticleContent(post).then(() => {
+        loadArticleContent(post).finally(() => {
           // Hide loading spinner after content is loaded
           hideLoadingSpinner();
         });
