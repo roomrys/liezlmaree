@@ -46,6 +46,11 @@ body {
     opacity: 1;
 }
 
+/* Katex */
+.katex {
+    overflow: auto;
+}
+
 /* Blog Post Styles */
 .blog-article {
     position: relative;
@@ -65,6 +70,12 @@ body {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1, h2, h3, .article-title {
+  overflow-wrap: break-word;  /* modern standard */
+  word-wrap: break-word;      /* older support */
+  hyphens: auto;              /* optional: adds hyphens when breaking */
 }
 
 .breadcrumb {
