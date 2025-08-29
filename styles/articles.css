@@ -84,7 +84,7 @@ h1, h2, h3, .article-title {
     font-size: 0.9rem;
 }
 
-.breadcrumb a {
+a {
     color: #3498db;
     text-decoration: none;
 }
@@ -222,7 +222,7 @@ pre {
 }
 
 /* Quote */
-.article-quote {
+blockquote {
     background: rgba(155, 89, 182, 0.1);
     border-left: 4px solid #9b59b6;
     padding: 1.5rem;
