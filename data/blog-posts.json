@@ -16,20 +16,13 @@
   "posts": [
     {
       "id": "image-classification-to-bitwise",
-      "title": "Manually Modify Output Layer of Neural Network: Image Classification to Bitwise Representation",
-      "date": "August 27, 2025",
-      "readTime": "5 min read",
-      "summary": "A practical guide on how to manually modify the output layer of a neural network to convert an image classification model into one that outputs a bitwise representation. This article covers the necessary steps, code examples, and considerations for deriving this transformation by-hand.",
-      "image": "assets/lm-magenta.png",
-      "tags": [
-        "Neural Network",
-        "Output Layer",
-        "Weights",
-        "Biases",
-        "Fundamentals",
-        "Python"
-      ],
-      "published": false,
+      "title": "Classification to Bitwise Representation: Derive a Solution Set for Weights and Biases",
+      "date": "August 28, 2025",
+      "readTime": "10 min read",
+      "summary": "A guide on how to manually modify the output layer of a neural network to convert an image classification model into one that outputs a bitwise representation. This article covers the necessary steps, code examples, and considerations for deriving this transformation by-hand.",
+      "image": "assets/image-classification-to-bitwise.svg",
+      "tags": ["Machine Learning", "Fundamentals", "Python"],
+      "published": true,
       "templateFile": "article_template.html",
       "authorId": "liezl-maree"
     },
@@ -65,7 +58,7 @@
       "summary": "This is just a placeholder for the time being, but I am actively writing my first article (after having coded up a blog template and semi-recklessly vibed lots of javascript/css yada yada yada). The link works of course, but no content is loaded.",
       "image": "assets/lm-magenta.png",
       "tags": ["Placeholder"],
-      "published": true,
+      "published": false,
       "templateFile": "placeholder.html",
       "authorId": "liezl-maree"
     }
