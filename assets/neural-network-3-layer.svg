@@ -1,0 +1,139 @@
+<!-- <html> -->
+<svg width="600" height="420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Input layer -->
+  <circle cx="100" cy="50" r="15" fill="lightblue" stroke="black" />
+  <circle cx="100" cy="100" r="15" fill="lightblue" stroke="black" />
+  <!-- Vertical ellipsis -->
+  <circle cx="100" cy="150" r="3" fill="black" />
+  <circle cx="100" cy="170" r="3" fill="black" />
+  <circle cx="100" cy="190" r="3" fill="black" />
+  <!-- More inputs after ellipsis -->
+  <circle cx="100" cy="240" r="15" fill="lightblue" stroke="black" />
+  <circle cx="100" cy="290" r="15" fill="lightblue" stroke="black" />
+
+  <!-- Hidden layer -->
+  <circle cx="300" cy="50" r="15" fill="lightgreen" stroke="black" />
+  <circle cx="300" cy="100" r="15" fill="lightgreen" stroke="black" />
+  <circle cx="300" cy="150" r="15" fill="lightgreen" stroke="black" />
+  <circle cx="300" cy="200" r="15" fill="lightgreen" stroke="black" />
+  <circle cx="300" cy="250" r="15" fill="lightgreen" stroke="black" />
+  <circle cx="300" cy="300" r="15" fill="lightgreen" stroke="black" />
+
+  <!-- Output layer (10 neurons) -->
+  <circle cx="500" cy="30" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="70" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="110" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="150" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="190" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="230" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="270" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="310" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="350" r="15" fill="lightcoral" stroke="black" />
+  <circle cx="500" cy="390" r="15" fill="lightcoral" stroke="black" />
+
+  <!-- Connections from input one to all hidden -->
+  <line x1="115" y1="50" x2="285" y2="50" stroke="gray" />
+  <line x1="115" y1="50" x2="285" y2="100" stroke="gray" />
+  <line x1="115" y1="50" x2="285" y2="150" stroke="gray" />
+  <line x1="115" y1="50" x2="285" y2="200" stroke="gray" />
+  <line x1="115" y1="50" x2="285" y2="250" stroke="gray" />
+  <line x1="115" y1="50" x2="285" y2="300" stroke="gray" />
+
+  <!-- Connections from input two to all hidden -->
+  <line x1="115" y1="100" x2="285" y2="100" stroke="gray" />
+  <line x1="115" y1="100" x2="285" y2="150" stroke="gray" />
+  <line x1="115" y1="100" x2="285" y2="200" stroke="gray" />
+  <line x1="115" y1="100" x2="285" y2="250" stroke="gray" />
+  <line x1="115" y1="100" x2="285" y2="300" stroke="gray" />
+
+  <!-- Connections from input three to all hidden -->
+  <line x1="115" y1="240" x2="285" y2="50" stroke="gray" />
+  <line x1="115" y1="240" x2="285" y2="100" stroke="gray" />
+  <line x1="115" y1="240" x2="285" y2="150" stroke="gray" />
+  <line x1="115" y1="240" x2="285" y2="200" stroke="gray" />
+  <line x1="115" y1="240" x2="285" y2="250" stroke="gray" />
+  <line x1="115" y1="240" x2="285" y2="300" stroke="gray" />
+
+  <!-- Connections from input four to all hidden -->
+  <line x1="115" y1="290" x2="285" y2="50" stroke="gray" />
+  <line x1="115" y1="290" x2="285" y2="100" stroke="gray" />
+  <line x1="115" y1="290" x2="285" y2="150" stroke="gray" />
+  <line x1="115" y1="290" x2="285" y2="200" stroke="gray" />
+  <line x1="115" y1="290" x2="285" y2="250" stroke="gray" />
+  <line x1="115" y1="290" x2="285" y2="300" stroke="gray" />
+
+  <!-- Connections from hidden one to all output -->
+  <line x1="315" y1="50" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="50" x2="485" y2="390" stroke="gray" />
+
+  <!-- Connections from hidden two to all output -->
+  <line x1="315" y1="100" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="100" x2="485" y2="390" stroke="gray" />
+
+  <!-- Connections from hidden three to all output -->
+  <line x1="315" y1="150" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="150" x2="485" y2="390" stroke="gray" />
+
+  <!-- Connections from hidden four to all output -->
+  <line x1="315" y1="200" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="200" x2="485" y2="390" stroke="gray" />
+
+  <!-- Connections from hidden five to all output -->
+  <line x1="315" y1="250" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="250" x2="485" y2="390" stroke="gray" />
+
+  <!-- Connections from hidden six to all output -->
+  <line x1="315" y1="300" x2="485" y2="30" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="70" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="110" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="150" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="190" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="230" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="270" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="310" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="350" stroke="gray" />
+  <line x1="315" y1="300" x2="485" y2="390" stroke="gray" />
+
+</svg>
+
+<!-- <html> -->

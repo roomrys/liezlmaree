@@ -2,7 +2,13 @@
 
 A popular dataset in machine learning is the MNIST dataset (stored in the [MNIST database](http://yann.lecun.com/exdb/mnist/)) which contains a collection of 70,000 handwritten digits from 0 to 9. When learning the fundamentals of machine learning, one might be asked to construct and train a neural network which takes as input an image from the MNIST dataset and outputs the classification of the digit present in the image.
 
-Let's assume that we have created a network with an output layer of 10 neurons (one for each class). Now, let us add an additional output layer that takes as input the one-hot encoding for classification and outputs the bitwise representation of the digit using 4 neurons. Our goal is to manually derive a set of weight and biases for the final layer that achieves this goal.
+Let's assume that we have created a network with an output layer of 10 neurons (one for each class).
+
+![Three layer neural network.](./assets/neural-network-3-layer.svg "A simplified three layer neural network with fully connected nodes. The first layer takes as input an image of a handwritten digit and will have many many nodes, namely one for each pixel! In practice there will be many more hidden layers as well, but for now we just have that one layer in the middle. True to our excercise, the output layer has 10 neurons, one for every digit classification.")
+
+Now, let us add an additional output layer that takes as input the one-hot encoding for classification and outputs the bitwise representation of the digit using 4 neurons. Our goal is to manually derive a set of weight and biases for the final layer that achieves this goal.
+
+![Four layer neural network.](./assets/neural-network-4-layer.svg "The same exact network as in the above image, but with a new output layer added onto the end.")
 
 In this article, we will walk through the manual derivation of these weights and biases, taking steps to ensure followability. Note that this excercise is an adaptation from one proposed in [Neural Networks and Deep Learning](https://neuralnetworksanddeeplearning.com/chap1.html).
 
@@ -11,6 +17,8 @@ In this article, we will walk through the manual derivation of these weights and
 The artificial neuron is the building block of our artificial neural network. At it's basis, the neuron takes some input and applies a mathematical operation to give an output. The type mathematical operation depends on the type of neuron. Thus, before we can solve for a set of weight and biases, we need to know which type of neuron we are dealing with.
 
 While not the first type of neuron, the **perceptron neuron** is simple neuron that takes a weighted sum of the inputs and outputs a binary value of either 0 or 1 - depending on whether the weighted sum is over a certain threshold. A more complicated neuron is the **sigmoid neuron** which applies a sigmoid function to the weighted sum of inputs and outputs a continuous value between 0 and 1. Each of these neurons come with their own problems (search vanishing gradient), and there are other types of neurons that are more commonly used.
+
+![Single neuron.](./assets/neuron.svg "A single neuron with two inputs $x_1$ and $x_2$ and its output $y_1$. Note that neurons will always only have one output, but this output could be connected to many other nodes and have a different weight for each connection. Notice that each input has an associated weight $w$ and that the neuron has an associated bias $b_1$.")
 
 For simplicity, we will use the perceptron neuron for the classification layer of our network which can be modeled as follows:
 
