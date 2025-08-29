@@ -11,6 +11,7 @@ html {
 body {
     margin: 0px;
     background-color: rgb(37, 37, 37);
+    overflow-x: clip;
 }
 
 p {

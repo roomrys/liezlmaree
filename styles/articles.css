@@ -48,7 +48,8 @@ body {
 
 /* Katex */
 .katex {
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* Blog Post Styles */
