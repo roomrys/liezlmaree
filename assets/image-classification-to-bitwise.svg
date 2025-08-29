@@ -25,11 +25,11 @@
      inkscape:document-units="px"
      inkscape:zoom="0.81835957"
      inkscape:cx="249.89016"
-     inkscape:cy="156.41046"
+     inkscape:cy="155.79949"
      inkscape:window-width="1512"
-     inkscape:window-height="945"
+     inkscape:window-height="916"
      inkscape:window-x="0"
-     inkscape:window-y="102"
+     inkscape:window-y="38"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" /><defs
      id="defs1" /><g
@@ -947,7 +947,7 @@
          id="tspan1"
          x="762.50098"
          y="-12.219571"
-         style="writing-mode:vertical-lr;text-orientation:upright;fill:#aaaaaa;fill-opacity:1">0100</tspan></text><path
+         style="writing-mode:vertical-lr;text-orientation:upright;fill:#aaaaaa;fill-opacity:1">0111</tspan></text><path
        id="path2"
        style="fill:#909090;fill-opacity:1;fill-rule:nonzero;stroke-width:0.641452"
        d="m 195.24563,155.18851 v 101.42241 l 27.15049,-53.76611 z m -69.38494,36.65897 v 28.10548 h 76.42395 v -28.10548 z" /><path
