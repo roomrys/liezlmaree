@@ -5,3 +5,9 @@
 lowlight {
     color: rgb(170, 170, 170);
 }
+
+#about a,
+#about a:link,
+#about a:visited {
+    color: rgb(199 110 199) !important;
+}
