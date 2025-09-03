@@ -12,7 +12,7 @@ The proposed improvement we will be discussing is for deep-learning based inpain
 
 A common problem when inpainting images is that the quality of the inpainting is poor when attempting to inpaint an image with higher resolution than was used while training the network. This has been linked to the receptive field which - if it stays the same size - will take in the same amount of pixel information for all image sizes, but will see less global structure for higher resolution images.
 
-![Receptive Field](./assets/receptive-field.svg "Here we see an example of a statically sized receptive field applied to the pixels of a low resolution and high resolution copy of the same image. The receptive field will see 3x3 pixels for both the low and high resolutions. Howevever, a 3x3 block pixels in the low resolution image cover more global context whereas the 3x3 block in the high resolution trades off global context for detail.")
+![Receptive Field](./assets/receptive-field.svg "Here we see an example of a statically sized receptive field applied to the pixels of a low resolution and high resolution copy of the same image. The receptive field will see 3x3 pixels for both the low and high resolutions. Howevever, a 3x3 block pixels in the low resolution image covers more global context whereas a 3x3 block in the high resolution trades off global context for detail.")
 
 A possible workaround is to downsample the high resolution image to a resolution closer to that of the network's training set, but then we sacrifice the detail of the higher resolution image.
 
