@@ -11,6 +11,24 @@ body {
     margin: 0;
 }
 
+/* Add borders to all tables and cells in articles */
+.article-content table,
+.article-content th,
+.article-content td {
+    border: 1px solid #888;
+    border-collapse: collapse;
+}
+
+.article-content th,
+.article-content td {
+    padding: 0.5em 1em;
+}
+
+/* Optional: zebra striping for rows */
+.article-content tr:nth-child(even) {
+    background: rgba(255,255,255,0.03);
+}
+
 .css-spinner {
     z-index: 50500;
     position: fixed;

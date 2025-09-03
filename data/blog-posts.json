@@ -15,6 +15,18 @@
   },
   "posts": [
     {
+      "id": "feature-refinement-high-res-inpainting",
+      "title": "Improve High-Resolution Inpainting via Multi-Scale Feature Refinement",
+      "date": "September 3, 2025",
+      "readTime": "7 min read",
+      "summary": "In this article, we review the multi-scale feature refinement method proposed in \"Feature Refinement to Improve High Resolution Image Inpainting\" written by Kulshreshtha, P., Pugh, B., & Jiddi, S. (2022).",
+      "image": "assets/inpainting-example.svg",
+      "tags": ["Computer Vision", "Inpainting"],
+      "published": true,
+      "templateFile": "article_template.html",
+      "authorId": "liezl-maree"
+    },
+    {
       "id": "image-classification-to-bitwise",
       "title": "Classification to Bitwise Representation: Derive a Solution Set for Weights and Biases",
       "date": "August 28, 2025",
