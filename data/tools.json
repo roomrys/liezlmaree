@@ -1,0 +1,40 @@
+{
+  "tools": [
+    {
+      "id": "linalg",
+      "title": "Change of Basis Visualizer",
+      "date": "June 22, 2025",
+      "summary": "A change of basis visualizer for linear transformations.",
+      "image": "assets/linalg.svg",
+      "link": "https://roomrys.github.io/linalg/",
+      "published": true
+    },
+    {
+      "id": "game-solver",
+      "title": "Game Solver",
+      "date": "May 27, 2024",
+      "summary": "Do you want to remove sudoku from your life? Look no further.",
+      "image": "assets/game-solver.svg",
+      "link": "https://github.com/roomrys/game-solver/",
+      "published": true
+    },
+    {
+      "id": "synesthesia",
+      "title": "Synesthesia: Shred without memorizing scales",
+      "date": "October 13, 2023",
+      "summary": "Synesthesia allows users to highlight all notes that they want to include while soloing in a guitar-hero-esk style. Great for beginners who don't yet have scales memorized.",
+      "image": "assets/synesthesia.svg",
+      "link": "https://roomrys.github.io/synesthesia/",
+      "published": true
+    },
+    {
+      "id": "rgb-axis",
+      "title": "RGB Axis Visualizer",
+      "date": "October 15, 2022",
+      "summary": "RGB Axis Visualizer allows users to explore the RGB color space in an interactive way.",
+      "image": "assets/rgb-axis.svg",
+      "link": "https://roomrys.github.io/rgb-axis/",
+      "published": true
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 
 #articles .title {color:#89adc9;}
 
-#posts {
+#posts,#tools-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -45,12 +45,13 @@
     object-fit: scale-down;
 }
 
-#posts li {
+#posts li, #tools-list li {
     margin-bottom: 25px;
+    justify-content: flex-start;
 }
 
 @media (max-width: 600px) {
-    #posts li {
+    #posts li, #tools-list li {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 100px;
