@@ -1,9 +1,18 @@
 {
   "tools": [
     {
+      "id": "sigsys",
+      "title": "Cosine Decomposition",
+      "date": "September 25, 2025",
+      "summary": "A visualizer for decomposing a phase-shifted cosine into its constituent sine and cosine waves.",
+      "image": "assets/sigsys.svg",
+      "link": "https://roomrys.github.io/sigsys/",
+      "published": true
+    },
+    {
       "id": "linalg",
-      "title": "Change of Basis Visualizer",
-      "date": "June 22, 2025",
+      "title": "Change of Basis",
+      "date": "September 22, 2025",
       "summary": "A change of basis visualizer for linear transformations.",
       "image": "assets/linalg.svg",
       "link": "https://roomrys.github.io/linalg/",
@@ -20,18 +29,18 @@
     },
     {
       "id": "synesthesia",
-      "title": "Synesthesia: Shred without memorizing scales",
+      "title": "Synesthesia",
       "date": "October 13, 2023",
-      "summary": "Synesthesia allows users to highlight all notes that they want to include while soloing in a guitar-hero-esk style. Great for beginners who don't yet have scales memorized.",
+      "summary": "Synesthesia displays a visual representation of the guitar fretboard and allows users to highlight all notes that they want to include while soloing in a guitar-hero-esk style. Great for beginners who don't yet have scales memorized.",
       "image": "assets/synesthesia.svg",
       "link": "https://roomrys.github.io/synesthesia/",
       "published": true
     },
     {
       "id": "rgb-axis",
-      "title": "RGB Axis Visualizer",
+      "title": "RGB Axis",
       "date": "October 15, 2022",
-      "summary": "RGB Axis Visualizer allows users to explore the RGB color space in an interactive way.",
+      "summary": "RGB Axis allows users to explore the RGB color space in an interactive way.",
       "image": "assets/rgb-axis.svg",
       "link": "https://roomrys.github.io/rgb-axis/",
       "published": true
