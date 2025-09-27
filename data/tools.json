@@ -1,12 +1,21 @@
 {
   "tools": [
     {
-      "id": "sigsys",
+      "id": "sigsys-integral",
+      "title": "Frequency Extraction",
+      "date": "September 26, 2025",
+      "summary": "Displays how to extract sin and cosine components from a composite wave using integrals.",
+      "image": "assets/sigsys-integral.svg",
+      "link": "https://roomrys.github.io/sigsys/integral.html",
+      "published": true
+    },
+    {
+      "id": "sigsys-phase-shift",
       "title": "Cosine Decomposition",
       "date": "September 25, 2025",
       "summary": "A visualizer for decomposing a phase-shifted cosine into its constituent sine and cosine waves.",
-      "image": "assets/sigsys.svg",
-      "link": "https://roomrys.github.io/sigsys/",
+      "image": "assets/sigsys-phase-shift.svg",
+      "link": "https://roomrys.github.io/sigsys/phase-shift.html",
       "published": true
     },
     {
