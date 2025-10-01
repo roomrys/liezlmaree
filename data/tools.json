@@ -2,7 +2,7 @@
   "tools": [
     {
       "id": "sigsys-integral",
-      "title": "Frequency Extraction",
+      "title": "Cosine Extraction",
       "date": "September 26, 2025",
       "summary": "Displays how to extract sin and cosine components from a composite wave using integrals.",
       "image": "assets/sigsys-integral.svg",
@@ -20,9 +20,9 @@
     },
     {
       "id": "linalg",
-      "title": "Change of Basis",
+      "title": "Linear Transformation",
       "date": "September 22, 2025",
-      "summary": "A change of basis visualizer for linear transformations.",
+      "summary": "A visualizer for linear transformations which allow users to explore changes in eigenvectors and basis as they manipulate the transformation matrix.",
       "image": "assets/linalg.svg",
       "link": "https://roomrys.github.io/linalg/",
       "published": true
