@@ -1,6 +1,15 @@
 {
   "tools": [
     {
+      "id": "linalg-svd-color-space",
+      "title": "SVD in Color Space",
+      "date": "Oct 18, 2025",
+      "summary": "An interactive visualizer demonstrating how Singular Value Decomposition (SVD) is able to find color axes that represent the most significant variations. Users can compare this to traditional RGB axes to see how SVD identifies more meaningful color directions.",
+      "image": "assets/linalg-svd-color-space.svg",
+      "link": "https://roomrys.github.io/linalg/svd-color-space.html",
+      "published": true
+    },
+    {
       "id": "sigsys-integral",
       "title": "Cosine Extraction",
       "date": "September 26, 2025",
