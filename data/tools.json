@@ -1,6 +1,15 @@
 {
   "tools": [
     {
+      "id": "path-finder",
+      "title": "Path Finder",
+      "date": "March 29, 2026",
+      "summary": "An interactive visualizer for pathfinding algorithms. Explore how algorithms like A*, Dijkstra's, and BFS navigate a grid to find the shortest path between two points.",
+      "image": "assets/path-finder.svg",
+      "link": "https://roomrys.github.io/path-finder/",
+      "published": true
+    },
+    {
       "id": "linalg-svd-color-space",
       "title": "SVD in Color Space",
       "date": "Oct 18, 2025",
